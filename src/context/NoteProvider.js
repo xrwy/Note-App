@@ -38,8 +38,8 @@ const NoteReducer = (state, action) => {
       }
 
     case NOTE_DELETE:
-      const deletedNotes = state.notes.filter((note) => parseInt(note.id) !== parseInt(action.payload))
-      localStorage.setItem('notes', JSON.stringify(deletedNotes));
+      const filteredNotes = state.notes.filter((note) => parseInt(note.id) !== parseInt(action.payload))
+      localStorage.setItem('notes', JSON.stringify(filteredNotes));
 
       return {
         ...state,
